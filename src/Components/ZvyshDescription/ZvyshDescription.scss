@@ -1,0 +1,32 @@
+.zvysh-description {
+  flex-grow: 13.8;
+  height: 100%;
+
+  .zvysh-description__inner-container{
+    height: 100%;
+    margin-left: 5.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .zvysh-description__location{
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+  }
+  .zvysh-description__text{
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+
+  }
+  .zvysh-description__location{
+  }
+  .zvysh-description__location-icon{
+    font-size: 1.8rem;
+  }
+  .zvysh-description__text_bottom{
+    margin-left: 0.6rem;
+  }
+}
+

@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'Roboto Light';
+  src: url('./fonts/Roboto-Light.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Roboto Thin';
+  src: url('./fonts/Roboto-Thin.ttf') format('ttf');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  width: 100%;
+}
+
+a {
+  color: #ffffff;
+}
+
+::-webkit-scrollbar-button {
+  background-image: url('');
+  background-repeat: no-repeat;
+  width: 1%;
+  height: 0;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ecedee
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background-color: #2ebaa7;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: #56999f;
+}
+
+::-webkit-resizer{
+  background-image: url('');
+  background-repeat: no-repeat;
+  width: 1%;
+  height: 0;
+}
+
+::-webkit-scrollbar{
+  width: 1%;
+}
+

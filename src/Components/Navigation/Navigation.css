@@ -1,0 +1,16 @@
+.navigation {
+  flex-grow: 25;
+  height: 100%; }
+  .navigation .navigation__inner-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .navigation .navigation__element-name {
+    font-size: 1.834rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    padding: 0.1em 1.2em; }
+  .navigation .navigation__element-name_active {
+    border: 0.0625em solid #ffffff; }
