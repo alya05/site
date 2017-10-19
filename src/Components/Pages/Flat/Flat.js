@@ -60,6 +60,22 @@ class Flat extends Component {
       })
     }
   };
+    
+    // set = () => (
+    //     <div> <MainSection addRoom={this.addRoom}
+    //                        addBathRoom={this.addBathRoom}
+    //                        removeRoom={this.removeRoom}
+    //                        removeBathRoom={this.removeBathRoom}
+    //                        roomCount={this.state.roomCount}
+    //                        bathroomCount={this.state.bathroomCount}
+    //                        price={price}/>
+    //         <RelaxSection/>
+    //         <TrustSection/>
+    //         <DescriptionSection/>
+    //         <CleanersSection/>
+    //         <FAQSection/>
+    //         <ProcessingSection/></div>
+    // );
 
   countPrice = () => {
     let price = 0;
@@ -75,19 +91,6 @@ class Flat extends Component {
     const price = this.countPrice();
     return (
       <div className="flat">
-        {/*<MainSection addRoom={this.addRoom}*/}
-                     {/*addBathRoom={this.addBathRoom}*/}
-                     {/*removeRoom={this.removeRoom}*/}
-                     {/*removeBathRoom={this.removeBathRoom}*/}
-                     {/*roomCount={this.state.roomCount}*/}
-                     {/*bathroomCount={this.state.bathroomCount}*/}
-                     {/*price={price}/>*/}
-        {/*<RelaxSection/>*/}
-        {/*<TrustSection/>*/}
-        {/*<DescriptionSection/>*/}
-        {/*<CleanersSection/>*/}
-        {/*<FAQSection/>*/}
-        {/*<ProcessingSection/>*/}
         <Calculator/>
       </div>
     );

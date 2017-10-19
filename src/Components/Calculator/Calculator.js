@@ -273,8 +273,6 @@ class Calculator extends Component {
            <li className="calculator__list-element">уборка пыли с ковров и мягкой мебели</li>
            <li className="calculator__list-element">протирание всей кухонной техниики снаружи, кроме
              вытяжки</li>
-           <li className="calculator__list-element">протирание всей кухонной техниики снаружи, кроме
-             вытяжки </li>
            <li className="calculator__list-element">чистка стеклянных и зеркальных поверхностей, кроме
              окон</li>
            <li className="calculator__list-element">мытье и дезинфекция сантехники</li>
@@ -286,8 +284,6 @@ class Calculator extends Component {
        list = (
         <ul className="calculator__list">
           <li className="calculator__list-element">уборка пыли с ковров и мягкой мебели</li>
-          <li className="calculator__list-element">протирание всей кухонной техниики снаружи, кроме
-            вытяжки</li>
           <li className="calculator__list-element">протирание всей кухонной техниики снаружи, кроме
             вытяжки </li>
           <li className="calculator__list-element">чистка стеклянных и зеркальных поверхностей, кроме
@@ -538,7 +534,7 @@ class Calculator extends Component {
               <span className="calculator__header">Дата и время</span>
             </div>
             <div className="calculator__parameters-line">
-              <div className="calculator__datePicker-container">
+              <div className="calculator__datePicker-container calculator__parameter ">
                 <DatePicker selected={this.state.date}
                             locale="ru-ru"
                             min-Date={moment().locale('ru')}
@@ -552,6 +548,7 @@ class Calculator extends Component {
                       placeholder="Время уборки"
                       options={this.state.times}
                       clearable={false}
+                      className="calculator__parameter"
                       autosize={false}
                       onChange={this.timeChange}/>
             </div>
@@ -561,8 +558,8 @@ class Calculator extends Component {
               <span className="calculator__header">Основная уборка</span>
             </div>
             <div className="calculator__button-container">
-              <div onClick={this.setSupportive} className={this.state.isSupportive ? 'calculator__button calculator__button--active' : 'calculator__button'}>Поддерживающая</div>
-              <div onClick={this.setComplex} className={this.state.isComplex ? 'calculator__button calculator__button--active' : 'calculator__button'}>Комплексная</div>
+              <div onClick={this.setSupportive} className={this.state.isSupportive ? 'calculator__button calculator__button--active' : 'calculator__button'}>поддерживающая</div>
+              <div onClick={this.setComplex} className={this.state.isComplex ? 'calculator__button calculator__button--active' : 'calculator__button'}>комплексная</div>
             </div>
             <div className="calculator__description">
               {this.renderDescription()}
