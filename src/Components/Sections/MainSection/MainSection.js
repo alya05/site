@@ -12,7 +12,7 @@ class MainSection extends Component {
         <div className="main-section__inner-container">
           <Header/>
           <Headlines/>
-          <CalculatorMini mainSectionProps={this.props}/>
+          <CalculatorMini  mainSectionProps={this.props}/>
         </div>
       </section>
     );

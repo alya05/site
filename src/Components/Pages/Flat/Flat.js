@@ -27,7 +27,8 @@ class Flat extends Component {
     }
     this.setState({
       roomCount: ++this.state.roomCount
-    })
+    });
+
   };
 
   removeRoom = () => {
@@ -38,6 +39,7 @@ class Flat extends Component {
         roomCount: --this.state.roomCount
       })
     }
+
   };
 
   addBathRoom = () => {
@@ -46,9 +48,7 @@ class Flat extends Component {
     }
     this.setState({
       bathroomCount: ++this.state.bathroomCount
-    })
-
-
+    });
   };
 
   removeBathRoom = () => {
@@ -60,29 +60,13 @@ class Flat extends Component {
       })
     }
   };
-    
-    // set = () => (
-    //     <div> <MainSection addRoom={this.addRoom}
-    //                        addBathRoom={this.addBathRoom}
-    //                        removeRoom={this.removeRoom}
-    //                        removeBathRoom={this.removeBathRoom}
-    //                        roomCount={this.state.roomCount}
-    //                        bathroomCount={this.state.bathroomCount}
-    //                        price={price}/>
-    //         <RelaxSection/>
-    //         <TrustSection/>
-    //         <DescriptionSection/>
-    //         <CleanersSection/>
-    //         <FAQSection/>
-    //         <ProcessingSection/></div>
-    // );
 
   countPrice = () => {
     let price = 0;
     price += PRICES.BASE_PRICE
       + (this.state.roomCount-1)*PRICES.ROOM_PRICE
       + (this.state.bathroomCount-1)*PRICES.BATHROOM_PRICE;
-
+    this.props.changeStartOptions({roomCount: this.state.roomCount,bathroomCount: this.state.bathroomCount});
     return price;
   };
 
@@ -91,7 +75,19 @@ class Flat extends Component {
     const price = this.countPrice();
     return (
       <div className="flat">
-        <Calculator/>
+  <MainSection addRoom={this.addRoom}
+               addBathRoom={this.addBathRoom}
+               removeRoom={this.removeRoom}
+               removeBathRoom={this.removeBathRoom}
+               roomCount={this.state.roomCount}
+               bathroomCount={this.state.bathroomCount}
+               price={price}/>
+  <RelaxSection/>
+  <TrustSection/>
+  <DescriptionSection/>
+  <CleanersSection/>
+  <FAQSection/>
+  <ProcessingSection/>
       </div>
     );
   }

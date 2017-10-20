@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './CalculatorMini.css';
+import { NavLink } from 'react-router-dom'
 
 class CalculatorMini extends Component {
   render() {
@@ -23,7 +24,9 @@ class CalculatorMini extends Component {
           </div>
           <div className="calculator-mini__button-block calculator-mini__button-block_makeorder-style">
             <div className="calculator-mini__button-block-inner-container">
-              <div className="calculator-mini__button-block-text calculator-mini__button-block-text_makeorder-style">Заказать уборку от {price}р</div>
+              <NavLink to={'order'}className="calculator-mini__button-block-text calculator-mini__button-block-text_makeorder-style">
+              <div>Заказать уборку от {price}р</div>
+              </NavLink>
             </div>
           </div>
         </div>

@@ -52,8 +52,8 @@ class Calculator extends Component {
     super(props);
     moment.locale('ru');
     this.state = {
-      roomCount: 1,
-      bathroomCount: 1,
+      roomCount: this.props.defaultValues.roomCount || 1,
+      bathroomCount:  this.props.defaultValues.bathroomCount || 1,
       userInfo: {},
       address: {},
       comment: '',
