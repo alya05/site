@@ -1,21 +1,28 @@
 .zvysh-description {
-  flex-grow: 13.8;
   height: 100%; }
   .zvysh-description .zvysh-description__inner-container {
     height: 100%;
-    margin-left: 5.4rem;
+    margin-left: 1em;
     display: flex;
     flex-direction: column;
     justify-content: center; }
   .zvysh-description .zvysh-description__location {
     display: flex;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 100; }
+    font-family: 'Roboto Light', sans-serif;
+    font-size: 1em; }
   .zvysh-description .zvysh-description__text {
-    font-size: 2rem;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300; }
+    font-size: 1em;
+    font-family: 'Roboto Light', sans-serif; }
   .zvysh-description .zvysh-description__location-icon {
     font-size: 1.8rem; }
   .zvysh-description .zvysh-description__text_bottom {
     margin-left: 0.6rem; }
+
+@media screen and (max-device-width: 600px) {
+  .zvysh-description {
+    height: max-content; }
+    .zvysh-description .zvysh-description__inner-container {
+      margin-left: 0;
+      align-items: center; }
+    .zvysh-description .zvysh-description__location {
+      display: none; } }

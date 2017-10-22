@@ -8,6 +8,10 @@ import CleanersSection from '../../Sections/CleanersSection/CleanersSection';
 import FAQSection from '../../Sections/FAQSection/FAQSection';
 import ProcessingSection from '../../Sections/ProcessingSection/ProcessingSection';
 import Calculator from '../../Calculator/Calculator';
+import logo from '../../../images/main_logo_colorfull.png';
+import Header from '../../Header/Header';
+
+
 
 import * as PRICES from '../../../constants/price';
 
@@ -20,6 +24,7 @@ class Flat extends Component {
       price: PRICES.BASE_PRICE
     }
   }
+
 
   addRoom = () => {
     if (this.state.roomCount === 5) {
@@ -78,11 +83,12 @@ class Flat extends Component {
   <MainSection addRoom={this.addRoom}
                addBathRoom={this.addBathRoom}
                removeRoom={this.removeRoom}
+               logo={logo}
                removeBathRoom={this.removeBathRoom}
                roomCount={this.state.roomCount}
                bathroomCount={this.state.bathroomCount}
                price={price}/>
-  <RelaxSection/>
+       <RelaxSection/>
   <TrustSection/>
   <DescriptionSection/>
   <CleanersSection/>

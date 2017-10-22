@@ -10,7 +10,7 @@ class MainSection extends Component {
     return (
       <section className="main-section">
         <div className="main-section__inner-container">
-          <Header/>
+          <Header logo={this.props.logo} specClass={'header__page'}/>
           <Headlines/>
           <CalculatorMini  mainSectionProps={this.props}/>
         </div>

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import './Calculator.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
+import './Calculator.css';
+import Header from '../Header/Header'
+import logo from '../../images/main-logo-calculator.png';
 
 import moment from 'moment';
 import 'moment/locale/ru'
@@ -46,6 +47,7 @@ import drawerActive from '../../images/drawerActive.png'
 
 import bathtub from '../../images/bathtub.png'
 import bathtubActive from '../../images/bathtubActive.png'
+import ReactDOM from 'react-dom';
 
 class Calculator extends Component {
   constructor(props) {
@@ -62,6 +64,7 @@ class Calculator extends Component {
       isHoover: false,
       isSupportive: true,
       isComplex: false,
+      isScrollBlock: false,
       times: [
         {value: '6.30', label: '6.30'},
         {value: '7.30', label: '7.30'},
@@ -130,6 +133,16 @@ class Calculator extends Component {
         }
       },
     }
+  }
+
+  componentDidMount() {
+  }
+  componentWillUnmount() {
+  }
+
+  handleScroll(e) {
+    debugger;
+    console.log(e);
   }
 
   renderRoomCount = () => {
@@ -268,30 +281,25 @@ class Calculator extends Component {
    let list;
     moment.lang('ru');
     if (this.state.isSupportive) {
-       list = (
-         <ul className="calculator__list">
-           <li className="calculator__list-element">уборка пыли с ковров и мягкой мебели</li>
-           <li className="calculator__list-element">протирание всей кухонной техниики снаружи, кроме
-             вытяжки</li>
-           <li className="calculator__list-element">чистка стеклянных и зеркальных поверхностей, кроме
-             окон</li>
-           <li className="calculator__list-element">мытье и дезинфекция сантехники</li>
-           <li className="calculator__list-element">мытье плинтусов и полов</li>
-           <li className="calculator__list-element">вынос бытового мусора</li>
-         </ul>
+      list = (
+        <ul className="calculator__list">
+          <li><span  className="calculator__list-element">уборка пыли с ковров и мягкой мебели</span></li>
+          <li><span  className="calculator__list-element">уборка пыли с ковров и мягкой мебели</span></li>
+          <li><span  className="calculator__list-element">уборка пыли с ковров и мягкой мебели</span></li>
+          <li><span  className="calculator__list-element">уборка пыли с ковров и мягкой мебели</span></li>
+          <li><span  className="calculator__list-element">уборка пыли с ковров и мягкой мебели</span></li>
+          <li><span  className="calculator__list-element">уборка пыли с ковров и мягкой мебели</span></li>
+        </ul>
       );
     } else {
        list = (
         <ul className="calculator__list">
-          <li className="calculator__list-element">уборка пыли с ковров и мягкой мебели</li>
-          <li className="calculator__list-element">протирание всей кухонной техниики снаружи, кроме
-            вытяжки </li>
-          <li className="calculator__list-element">чистка стеклянных и зеркальных поверхностей, кроме
-            окон</li>
-          <li className="calculator__list-element">мытье и дезинфекция сантехники</li>
-          <li className="calculator__list-element">мытье плинтусов и полов</li>
-          <li className="calculator__list-element">вынос бытового мусора</li>
-          <li className="calculator__list-element">уборка вертикальных поверхностей</li>
+          <li><span  className="calculator__list-element">уборка пыли с ковров и мягкой мебели</span></li>
+          <li><span  className="calculator__list-element">уборка пыли с ковров и мягкой мебели</span></li>
+          <li><span  className="calculator__list-element">уборка пыли с ковров и мягкой мебели</span></li>
+          <li><span  className="calculator__list-element">уборка пыли с ковров и мягкой мебели</span></li>
+          <li><span  className="calculator__list-element">уборка пыли с ковров и мягкой мебели</span></li>
+          <li><span  className="calculator__list-element">уборка пыли с ковров и мягкой мебели</span></li>
         </ul>
       );
     }
@@ -502,6 +510,8 @@ class Calculator extends Component {
     return time + ' ч.'
   };
 
+
+
   render() {
 
     var options = {
@@ -510,291 +520,307 @@ class Calculator extends Component {
     };
 
     return (
-      <div className="calculator">
-        <div className="calculator__order-form">
-          <div className="calculator__parameter-container">
-            <div className="calculator__text">
-              <span className="calculator__header">Параметры квартиры</span>
-            </div>
-            <div className="calculator__parameters-line">
-              <div className="calculator__parameter">
-                 <div onClick={this.removeRoom} className="calculator__parameter-text">-</div>
-                 <div className="calculator__parameter-text--center">{this.renderRoomCount()}</div>
-                 <div onClick={this.addRoom} className="calculator__parameter-text">+</div>
+      <div>
+        <div className="calculator__top-header">
+          <Header logo={logo} specClass={'header__calculator'}/>
+          <div className="calculator__top-title">
+            Оформление заказа
+          </div>
+        </div>
+        {/*<div className="scroll-block" ref="scroll" >*/}
+          {/*<div className="scroll-block__text-container">*/}
+            {/*<span className="scroll-block__text" >К оплате</span>*/}
+            {/*<span className="scroll-block__text scroll-block__text--blue">{this.countPrice()}</span>*/}
+          {/*</div>*/}
+          {/*<div className="scroll-block__button">*/}
+            {/*Заказать уборку*/}
+          {/*</div>*/}
+        {/*</div>*/}
+        <div className="calculator">
+          <div className="calculator__order-form">
+            <div className="calculator__parameter-container">
+              <div className="calculator__text">
+                <span className="calculator__header">Параметры квартиры</span>
               </div>
-              <div className="calculator__parameter">
-              <div onClick={this.removeBathRoom} className="calculator__parameter-text">-</div>
+              <div className="calculator__parameters-line">
+                <div className="calculator__parameter">
+                  <div onClick={this.removeRoom} className="calculator__parameter-text">-</div>
+                  <div className="calculator__parameter-text--center">{this.renderRoomCount()}</div>
+                  <div onClick={this.addRoom} className="calculator__parameter-text">+</div>
+                </div>
+                <div className="calculator__parameter">
+                  <div onClick={this.removeBathRoom} className="calculator__parameter-text">-</div>
                   <div className="calculator__parameter-text--center">{this.renderBathroomCount()}</div>
                   <div onClick={this.addBathRoom} className="calculator__parameter-text">+</div>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="calculator__parameter-container">
-            <div className="calculator__text">
-              <span className="calculator__header">Дата и время</span>
-            </div>
-            <div className="calculator__parameters-line">
-              <div className="calculator__datePicker-container calculator__parameter ">
-                <DatePicker selected={this.state.date}
-                            locale="ru-ru"
-                            min-Date={moment().locale('ru')}
-                            placeholderText="Выберите дату"
-                            readOnly={true}
-                            onChange={this.changeData}
-                            className={'calculator__input--date'}/>
+            <div className="calculator__parameter-container">
+              <div className="calculator__text">
+                <span className="calculator__header">Дата и время</span>
               </div>
-              <Select name="Время уборки"
-                      value={this.state.time}
-                      placeholder="Время уборки"
-                      options={this.state.times}
-                      clearable={false}
-                      className="calculator__parameter"
-                      autosize={false}
-                      onChange={this.timeChange}/>
+              <div className="calculator__parameters-line">
+                <div className="calculator__datePicker-container calculator__parameter ">
+                  <DatePicker selected={this.state.date}
+                              locale="ru-ru"
+                              min-Date={moment().locale('ru')}
+                              placeholderText="Выберите дату"
+                              readOnly={true}
+                              onChange={this.changeData}
+                              className={'calculator__input--date'}/>
+                </div>
+                <Select name="Время уборки"
+                        value={this.state.time}
+                        placeholder="Время уборки"
+                        options={this.state.times}
+                        clearable={false}
+                        searchable={false}
+                        className="calculator__parameter"
+                        autosize={false}
+                        onChange={this.timeChange}/>
+              </div>
             </div>
-          </div>
-          <div className="calculator__parameter-container">
-            <div className="calculator__text">
-              <span className="calculator__header">Основная уборка</span>
+            <div className="calculator__parameter-container">
+              <div className="calculator__text">
+                <span className="calculator__header">Основная уборка</span>
+              </div>
+              <div className="calculator__button-container">
+                <div onClick={this.setSupportive} className={this.state.isSupportive ? 'calculator__button calculator__button--active' : 'calculator__button'}>поддерживающая</div>
+                <div onClick={this.setComplex} className={this.state.isComplex ? 'calculator__button calculator__button--active' : 'calculator__button'}>комплексная</div>
+              </div>
+              <div className="calculator__description">
+                {this.renderDescription()}
+              </div>
             </div>
-            <div className="calculator__button-container">
-              <div onClick={this.setSupportive} className={this.state.isSupportive ? 'calculator__button calculator__button--active' : 'calculator__button'}>поддерживающая</div>
-              <div onClick={this.setComplex} className={this.state.isComplex ? 'calculator__button calculator__button--active' : 'calculator__button'}>комплексная</div>
-            </div>
-            <div className="calculator__description">
-              {this.renderDescription()}
-            </div>
-          </div>
-          <div className="calculator__parameter-container">
-            <div className="calculator__text">
-              <span className="calculator__header">Дополнительные опции</span>
-            </div>
-            <div className="calculator__option-container">
-              <div className="calculator__option">
-                <div onClick={this.addOption.bind(this, 'window')}
-                     className={this.state.options.window.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
+            <div className="calculator__parameter-container">
+              <div className="calculator__text">
+                <span className="calculator__header">Дополнительные опции</span>
+              </div>
+              <div className="calculator__option-container">
+                <div className="calculator__option">
+                  <div onClick={this.addOption.bind(this, 'window')}
+                       className={this.state.options.window.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
                     <div className="calculator__image-container">
                       <img src={this.state.options.window.checked ? windowActive : window} alt="Окна"/>
                     </div>
                     <span className={this.state.options.window.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Окна</span>
+                  </div>
+                  <div className={this.state.options.window.checked ? "calculator__counter": 'hide'}>
+                    <div onClick={this.removeItem.bind(this, 'window')} className="calculator__counter-left"><span>-</span></div>
+                    <div className="calculator__counter-middle">{this.state.options.window.count} шт.</div>
+                    <div onClick={this.addItem.bind(this, 'window')}  className="calculator__counter-right"><span>+</span></div>
+                  </div>
                 </div>
-                <div className={this.state.options.window.checked ? "calculator__counter": 'hide'}>
-                  <div onClick={this.removeItem.bind(this, 'window')} className="calculator__counter-left"><span>-</span></div>
-                  <div className="calculator__counter-middle">{this.state.options.window.count} шт.</div>
-                  <div onClick={this.addItem.bind(this, 'window')}  className="calculator__counter-right"><span>+</span></div>
+                <div className="calculator__option">
+                  <div onClick={this.addOption.bind(this, 'balcony')}
+                       className={this.state.options.balcony.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
+                    <div className="calculator__image-container">
+                      <img src={this.state.options.balcony.checked ? balconyActive : balcony} alt="Балконы"/>
+                    </div>
+                    <span className={this.state.options.balcony.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Балкон</span>
+                  </div>
+                  <div className={this.state.options.balcony.checked ? "calculator__counter": 'hide'}>
+                    <div onClick={this.removeItem.bind(this, 'balcony')} className="calculator__counter-left">-</div>
+                    <div className="calculator__counter-middle">{this.state.options.balcony.count} шт.</div>
+                    <div onClick={this.addItem.bind(this, 'balcony')}  className="calculator__counter-right">+</div>
+                  </div>
+                </div>
+                <div className="calculator__option">
+                  <div onClick={this.addOption.bind(this, 'cutlery')}
+                       className={this.state.options.cutlery.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
+                    <div className="calculator__image-container">
+                      <img src={this.state.options.cutlery.checked ? cutleryActive : cutlery} alt="Посуда"/>
+                    </div>
+                    <span className={this.state.options.cutlery.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Посуда</span>
+                  </div>
+                </div>
+                <div className="calculator__option">
+                  <div onClick={this.addOption.bind(this, 'fridge')}
+                       className={this.state.options.fridge.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
+                    <div className="calculator__image-container">
+                      <img src={this.state.options.fridge.checked ? fridgeActive : fridge} alt="Холодильник"/>
+                    </div>
+                    <span className={this.state.options.fridge.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Холодильник</span>
+                  </div>
+                  <div className={this.state.options.fridge.checked ? "calculator__counter": 'hide'}>
+                    <div onClick={this.removeItem.bind(this, 'fridge')} className="calculator__counter-left">-</div>
+                    <div className="calculator__counter-middle">{this.state.options.fridge.count} шт.</div>
+                    <div onClick={this.addItem.bind(this, 'fridge')} className="calculator__counter-right">+</div>
+                  </div>
+                </div>
+                <div className="calculator__option">
+                  <div onClick={this.addOption.bind(this, 'oven')}
+                       className={this.state.options.oven.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
+                    <div className="calculator__image-container">
+                      <img src={this.state.options.oven.checked ? ovenActive : oven} alt="Духовка"/>
+                    </div>
+                    <span className={this.state.options.oven.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Духовка</span>
+                  </div>
+                </div>
+                <div className="calculator__option">
+                  <div onClick={this.addOption.bind(this, 'microwave')}
+                       className={this.state.options.microwave.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
+                    <div className="calculator__image-container">
+                      <img src={this.state.options.microwave.checked ? microwaveActive : microwave} alt="Микроволновка"/>
+                    </div>
+                    <span className={this.state.options.microwave.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Микроволновка</span>
+                  </div>
+                </div>
+                <div className="calculator__option">
+                  <div onClick={this.addOption.bind(this, 'kitchen')}
+                       className={this.state.options.kitchen.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
+                    <div className="calculator__image-container">
+                      <img src={this.state.options.kitchen.checked ? kitchenActive : kitchen} alt="Внутри кухонных шкафов"/>
+                    </div>
+                    <span className={this.state.options.kitchen.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Внутри кухонных шкафов</span>
+                  </div>
+                </div>
+                <div className="calculator__option">
+                  <div onClick={this.addOption.bind(this, 'iron')}
+                       className={this.state.options.iron.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
+                    <div className="calculator__image-container">
+                      <img src={this.state.options.iron.checked ? ironActive : iron} alt="Глажка"/>
+                    </div>
+                    <span className={this.state.options.iron.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Глажка</span>
+                  </div>
+                  <div className={this.state.options.iron.checked ? "calculator__counter": 'hide'}>
+                    <div onClick={this.removeItem.bind(this, 'iron')} className="calculator__counter-left">-</div>
+                    <div className="calculator__counter-middle">{this.state.options.iron.count} ч.</div>
+                    <div onClick={this.addItem.bind(this, 'iron')} className="calculator__counter-right">+</div>
+                  </div>
+                </div>
+                <div className="calculator__option">
+                  <div onClick={this.addOption.bind(this, 'chandelier')}
+                       className={this.state.options.chandelier.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
+                    <div className="calculator__image-container">
+                      <img src={this.state.options.chandelier.checked ? chandelierActive : chandelier} alt="Люстры"/>
+                    </div>
+                    <span className={this.state.options.chandelier.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Люстры</span>
+                  </div>
+                  <div className={this.state.options.chandelier.checked ? "calculator__counter": 'hide'}>
+                    <div onClick={this.removeItem.bind(this, 'chandelier')} className="calculator__counter-left">-</div>
+                    <div className="calculator__counter-middle">{this.state.options.chandelier.count} шт.</div>
+                    <div onClick={this.addItem.bind(this, 'chandelier')} className="calculator__counter-right">+</div>
+                  </div>
+                </div>
+                <div className="calculator__option">
+                  <div onClick={this.addOption.bind(this, 'tray')}
+                       className={this.state.options.tray.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
+                    <div className="calculator__image-container">
+                      <img src={this.state.options.tray.checked ? trayActive : tray} alt="Лоток питомца"/>
+                    </div>
+                    <span className={this.state.options.tray.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Лоток питомца</span>
+                  </div>
+                  <div className={this.state.options.tray.checked ? "calculator__counter": 'hide'}>
+                    <div onClick={this.removeItem.bind(this, 'tray')} className="calculator__counter-left">-</div>
+                    <div className="calculator__counter-middle">{this.state.options.tray.count} шт.</div>
+                    <div onClick={this.addItem.bind(this, 'tray')} className="calculator__counter-right">+</div>
+                  </div>
+                </div>
+                <div className="calculator__option">
+                  <div onClick={this.addOption.bind(this, 'drawer')}
+                       className={this.state.options.drawer.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
+                    <div className="calculator__image-container">
+                      <img src={this.state.options.drawer.checked ? drawerActive : drawer} alt="Фасады мебели"/>
+                    </div>
+                    <span className={this.state.options.drawer.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Фасады мебели</span>
+                  </div>
+                </div>
+                <div className="calculator__option">
+                  <div onClick={this.addOption.bind(this, 'bathtub')}
+                       className={this.state.options.bathtub.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
+                    <div className="calculator__image-container">
+                      <img src={this.state.options.bathtub.checked ? bathtubActive : bathtub} alt="Стены в ванной"/>
+                    </div>
+                    <span className={this.state.options.bathtub.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Стены в ванной</span>
+                  </div>
                 </div>
               </div>
-              <div className="calculator__option">
-                <div onClick={this.addOption.bind(this, 'balcony')}
-                     className={this.state.options.balcony.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
-                <div className="calculator__image-container">
-                    <img src={this.state.options.balcony.checked ? balconyActive : balcony} alt="Балконы"/>
-                  </div>
-                  <span className={this.state.options.balcony.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Балкон</span>
-                </div>
-                <div className={this.state.options.balcony.checked ? "calculator__counter": 'hide'}>
-                  <div onClick={this.removeItem.bind(this, 'balcony')} className="calculator__counter-left">-</div>
-                  <div className="calculator__counter-middle">{this.state.options.balcony.count} шт.</div>
-                  <div onClick={this.addItem.bind(this, 'balcony')}  className="calculator__counter-right">+</div>
-                </div>
+              <div className="calculator__hoover">
+                <input className="calculator__hoover-input"
+                       checked={this.state.isHoover}
+                       type="checkbox"
+                       onChange={this.editHoover}
+                       id='hoover'
+                />
+                <label  className="calculator__hoover-label" htmlFor="hoover">у меня есть пылесос</label>
               </div>
-              <div className="calculator__option">
-                <div onClick={this.addOption.bind(this, 'cutlery')}
-                     className={this.state.options.cutlery.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
-                  <div className="calculator__image-container">
-                    <img src={this.state.options.cutlery.checked ? cutleryActive : cutlery} alt="Посуда"/>
-                  </div>
-                  <span className={this.state.options.cutlery.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Посуда</span>
-                </div>
+            </div>
+            <div className="calculator__parameter-container">
+              <div className="calculator__text">
+                <span className="calculator__header">Адрес</span>
               </div>
-              <div className="calculator__option">
-                <div onClick={this.addOption.bind(this, 'fridge')}
-                     className={this.state.options.fridge.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
-                <div className="calculator__image-container">
-                    <img src={this.state.options.fridge.checked ? fridgeActive : fridge} alt="Холодильник"/>
+              <div className="calculator__address">
+                <div className="calculator__address-container">
+                  <input type="text" disabled={true} value={'Солигорск'} className="calculator__input--long"/>
+                  <div className="calculator__input-container">
+                    <input type="text" onChange={this.changeAddress} name="home" placeholder="Дом" className="calculator__input--short"/>
+                    <input type="text" onChange={this.changeAddress} name="housing" placeholder="Корпус" className="calculator__input--short"/>
                   </div>
-                  <span className={this.state.options.fridge.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Холодильник</span>
                 </div>
-                <div className={this.state.options.fridge.checked ? "calculator__counter": 'hide'}>
-                  <div onClick={this.removeItem.bind(this, 'fridge')} className="calculator__counter-left">-</div>
-                  <div className="calculator__counter-middle">{this.state.options.fridge.count} шт.</div>
-                  <div onClick={this.addItem.bind(this, 'fridge')} className="calculator__counter-right">+</div>
-                </div>
-              </div>
-              <div className="calculator__option">
-                <div onClick={this.addOption.bind(this, 'oven')}
-                     className={this.state.options.oven.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
-                <div className="calculator__image-container">
-                    <img src={this.state.options.oven.checked ? ovenActive : oven} alt="Духовка"/>
+                <div className="calculator__address-container">
+                  <input type="text" onChange={this.changeAddress} name="street" placeholder="Улица" className="calculator__input--long"/>
+                  <div className="calculator__input-container">
+                    <input type="text" onChange={this.changeAddress} name="flat" placeholder="Квартира" className="calculator__input--short"/>
+                    <input type="text" onChange={this.changeAddress} name="Entrance" placeholder="Подъезд" className="calculator__input--short"/>
                   </div>
-                  <span className={this.state.options.oven.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Духовка</span>
-                </div>
-              </div>
-              <div className="calculator__option">
-                <div onClick={this.addOption.bind(this, 'microwave')}
-                     className={this.state.options.microwave.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
-                <div className="calculator__image-container">
-                    <img src={this.state.options.microwave.checked ? microwaveActive : microwave} alt="Микроволновка"/>
-                  </div>
-                  <span className={this.state.options.microwave.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Микроволновка</span>
-                </div>
-              </div>
-              <div className="calculator__option">
-                <div onClick={this.addOption.bind(this, 'kitchen')}
-                     className={this.state.options.kitchen.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
-                <div className="calculator__image-container">
-                    <img src={this.state.options.kitchen.checked ? kitchenActive : kitchen} alt="Внутри кухонных шкафов"/>
-                  </div>
-                  <span className={this.state.options.kitchen.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Внутри кухонных шкафов</span>
-                </div>
-              </div>
-              <div className="calculator__option">
-                <div onClick={this.addOption.bind(this, 'iron')}
-                     className={this.state.options.iron.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
-                <div className="calculator__image-container">
-                    <img src={this.state.options.iron.checked ? ironActive : iron} alt="Глажка"/>
-                  </div>
-                  <span className={this.state.options.iron.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Глажка</span>
-                </div>
-                <div className={this.state.options.iron.checked ? "calculator__counter": 'hide'}>
-                  <div onClick={this.removeItem.bind(this, 'iron')} className="calculator__counter-left">-</div>
-                  <div className="calculator__counter-middle">{this.state.options.iron.count} ч.</div>
-                  <div onClick={this.addItem.bind(this, 'iron')} className="calculator__counter-right">+</div>
-                </div>
-              </div>
-              <div className="calculator__option">
-                <div onClick={this.addOption.bind(this, 'chandelier')}
-                     className={this.state.options.chandelier.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
-                <div className="calculator__image-container">
-                    <img src={this.state.options.chandelier.checked ? chandelierActive : chandelier} alt="Люстры"/>
-                  </div>
-                  <span className={this.state.options.chandelier.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Люстры</span>
-                </div>
-                <div className={this.state.options.chandelier.checked ? "calculator__counter": 'hide'}>
-                  <div onClick={this.removeItem.bind(this, 'chandelier')} className="calculator__counter-left">-</div>
-                  <div className="calculator__counter-middle">{this.state.options.chandelier.count} шт.</div>
-                  <div onClick={this.addItem.bind(this, 'chandelier')} className="calculator__counter-right">+</div>
-                </div>
-              </div>
-              <div className="calculator__option">
-                <div onClick={this.addOption.bind(this, 'tray')}
-                     className={this.state.options.tray.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
-                <div className="calculator__image-container">
-                    <img src={this.state.options.tray.checked ? trayActive : tray} alt="Лоток питомца"/>
-                  </div>
-                  <span className={this.state.options.tray.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Лоток питомца</span>
-                </div>
-                <div className={this.state.options.tray.checked ? "calculator__counter": 'hide'}>
-                  <div onClick={this.removeItem.bind(this, 'tray')} className="calculator__counter-left">-</div>
-                  <div className="calculator__counter-middle">{this.state.options.tray.count} шт.</div>
-                  <div onClick={this.addItem.bind(this, 'tray')} className="calculator__counter-right">+</div>
-                </div>
-              </div>
-              <div className="calculator__option">
-                <div onClick={this.addOption.bind(this, 'drawer')}
-                     className={this.state.options.drawer.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
-                <div className="calculator__image-container">
-                    <img src={this.state.options.drawer.checked ? drawerActive : drawer} alt="Фасады мебели"/>
-                  </div>
-                  <span className={this.state.options.drawer.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Фасады мебели</span>
-                </div>
-              </div>
-              <div className="calculator__option">
-                <div onClick={this.addOption.bind(this, 'bathtub')}
-                     className={this.state.options.bathtub.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
-                <div className="calculator__image-container">
-                    <img src={this.state.options.bathtub.checked ? bathtubActive : bathtub} alt="Стены в ванной"/>
-                  </div>
-                  <span className={this.state.options.bathtub.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Стены в ванной</span>
                 </div>
               </div>
             </div>
-            <div className="calculator__hoover">
-              <input className="calculator__hoover-input"
-                     checked={this.state.isHoover}
-                     type="checkbox"
-                     onChange={this.editHoover}
-                     id='hoover'
-                     />
-              <label  className="calculator__hoover-label" htmlFor="hoover">у меня есть пылесос</label>
+            <div className="calculator__parameter-container">
+              <div className="calculator__text">
+                <span className="calculator__header">Контактная информация</span>
+              </div>
+              <div className="calculator__userInfo">
+                <div className="calculator__userInfo-container">
+                  <input type="text" onChange={this.changeUserInfo} name="name" placeholder="Имя" className="calculator__input--long"/>
+                  <input type="text" onChange={this.changeUserInfo} name="phoneNumber" placeholder="Телефон" className="calculator__input--long"/>
+                </div>
+                <div className="calculator__userInfo-container">
+                  <input type="text" onChange={this.changeUserInfo} name="e-mail" placeholder="e-mail" className="calculator__input--long"/>
+                  <input type="text" onChange={this.changeUserInfo} name="lastName" placeholder="Фамилия" className="calculator__input--long"/>
+                </div>
+              </div>
+            </div>
+            <div className="calculator__parameter-container">
+              <div className="calculator__text">
+                <span className="calculator__header">Комментарий</span>
+              </div>
+              <div className="calculator__comment-container">
+                <textarea className="calculator__textArea" onChange={this.changeComment} name=""/>
+              </div>
             </div>
           </div>
-          <div className="calculator__parameter-container">
-            <div className="calculator__text">
-              <span className="calculator__header">Адрес</span>
-            </div>
-            <div className="calculator__address">
-              <div className="calculator__address-container">
-                <input type="text" disabled={true} value={'Солигорск'} className="calculator__input--long"/>
-                <div className="calculator__input-container">
-                  <input type="text" onChange={this.changeAddress} name="home" placeholder="Дом" className="calculator__input--short"/>
-                  <input type="text" onChange={this.changeAddress} name="housing" placeholder="Корпус" className="calculator__input--short"/>
-                </div>
-              </div>
-              <div className="calculator__address-container">
-                <input type="text" onChange={this.changeAddress} name="street" placeholder="Улица" className="calculator__input--long"/>
-                <div className="calculator__input-container">
-                  <input type="text" onChange={this.changeAddress} name="flat" placeholder="Квартира" className="calculator__input--short"/>
-                  <input type="text" onChange={this.changeAddress} name="Entrance" placeholder="Подъезд" className="calculator__input--short"/>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="calculator__parameter-container">
-            <div className="calculator__text">
-              <span className="calculator__header">Контактная информация</span>
-            </div>
-            <div className="calculator__userInfo">
-              <div className="calculator__userInfo-container">
-                <input type="text" onChange={this.changeUserInfo} name="name" placeholder="Имя" className="calculator__input--long"/>
-                <input type="text" onChange={this.changeUserInfo} name="phoneNumber" placeholder="Телефон" className="calculator__input--long"/>
-              </div>
-              <div className="calculator__userInfo-container">
-                <input type="text" onChange={this.changeUserInfo} name="e-mail" placeholder="e-mail" className="calculator__input--long"/>
-                <input type="text" onChange={this.changeUserInfo} name="lastName" placeholder="Фамилия" className="calculator__input--long"/>
-              </div>
-            </div>
-          </div>
-          <div className="calculator__parameter-container">
-            <div className="calculator__text">
-              <span className="calculator__header">Комментарий</span>
-            </div>
-            <div className="calculator__comment-container">
-              <textarea className="calculator__textArea" onChange={this.changeComment} name=""/>
-            </div>
-          </div>
-        </div>
-        <div className="calculator__order-info">
-          <div className="calculator__order-info-header">
-            <span>
+          <div className="calculator__order-info">
+            <span className="calculator__order-info-header">
               {this.renderOrderHeader()}
             </span>
-          </div>
-          <div className="calculator__order-info-container calculator__order-info-container--vertical">
-            <span>Дополнительно:</span>
-            <span className="calculator__text-blue">{this.renderOptionsList()}</span>
-          </div>
-          <div className="calculator__order-info-container">
-            <span className="calculator__order-info-text">Продолжительность уборки:</span>
-            <span className="calculator__order-info-text-blue">~ {this.countTime()}</span>
-          </div>
-          <div className="calculator__order-info-container">
-             <span className="calculator__order-info-text">Дата уборки:</span>
-             <span className="calculator__order-info-text-blue">{this.renderTimeDate()}</span>
-          </div>
-          <div className="calculator__order-info-container">
-            <span className="calculator__order-info-text">К оплате:</span>
-            <span className="calculator__order-info-text-blue">{this.countPrice()}</span>
-          </div>
-          <div className="calculator__order-info-container">
-            <input className="calculator__order-info-input" type="text" placeholder="Промокод"/>
-            <div className="calculator__order-info-button-code">Применить</div>
-          </div>
+            <div className="calculator__order-info-container calculator__order-info-container--vertical">
+              <span>Дополнительно:</span>
+              <span className="calculator__text-blue">{this.renderOptionsList()}</span>
+            </div>
+            <div className="calculator__order-info-container">
+              <span className="calculator__order-info-text">Продолжительность уборки:</span>
+              <span className="calculator__order-info-text-blue">~ {this.countTime()}</span>
+            </div>
+            <div className="calculator__order-info-container">
+              <span className="calculator__order-info-text">Дата уборки:</span>
+              <span className="calculator__order-info-text-blue">{this.renderTimeDate()}</span>
+            </div>
+            <div className="calculator__order-info-container">
+              <span className="calculator__order-info-text">К оплате:</span>
+              <span className="calculator__order-info-text-blue">{this.countPrice()}</span>
+            </div>
+            <div className="calculator__order-info-container">
+              <input className="calculator__order-info-input" type="text" placeholder="Промокод"/>
+              <div className="calculator__order-info-button-code">Применить</div>
+            </div>
             <div className="calculator__order-info-button-submit">Заказать уборку</div>
-          <div className="calculator__order-info-agreement">
+            <div className="calculator__order-info-agreement">
             <span>Нажимая кнопку, Вы принимаете условия
               <span><a  className="calculator__agreement-link" href=""> пользовательского соглашения</a></span>
             </span>
+            </div>
           </div>
         </div>
       </div>
