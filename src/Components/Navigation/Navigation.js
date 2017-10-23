@@ -12,9 +12,9 @@ class Navigation extends Component {
           <div className="navigation__element">
             <a className="navigation__element-name" href="#">коттедж</a>
           </div>
-          <div className="navigation__element">
-            <a className="navigation__element-name" href="#">окна</a>
-          </div>
+          {/*<div className="navigation__element">*/}
+            {/*<a className="navigation__element-name" href="#">окна</a>*/}
+          {/*</div>*/}
         </div>
       </div>
     );

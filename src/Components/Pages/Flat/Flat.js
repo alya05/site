@@ -9,11 +9,11 @@ import FAQSection from '../../Sections/FAQSection/FAQSection';
 import ProcessingSection from '../../Sections/ProcessingSection/ProcessingSection';
 import Calculator from '../../Calculator/Calculator';
 import logo from '../../../images/main_logo_colorfull.png';
-import Header from '../../Header/Header';
 
 
 
 import * as PRICES from '../../../constants/price';
+import Footer from '../../Footer/Footer';
 
 class Flat extends Component {
   constructor(props) {
@@ -94,6 +94,7 @@ class Flat extends Component {
   <CleanersSection/>
   <FAQSection/>
   <ProcessingSection/>
+        <Footer logo={logo}/>
       </div>
     );
   }
