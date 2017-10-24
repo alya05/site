@@ -6,15 +6,14 @@ import TrustSection from '../../Sections/TrustSection/TrustSection';
 import DescriptionSection from '../../Sections/DescriptionSection/DescriptionSection';
 import CleanersSection from '../../Sections/CleanersSection/CleanersSection';
 import FAQSection from '../../Sections/FAQSection/FAQSection';
-import BottomCalculator from '../../Sections/Bottom-Calculator/Bottom-Calculator';
 import ProcessingSection from '../../Sections/ProcessingSection/ProcessingSection';
-import Calculator from '../../Calculator/Calculator';
+import BottomCalculator from '../../Sections/Bottom-Calculator/Bottom-Calculator';
 import logo from '../../../images/main_logo_colorfull.png';
-import Header from '../../Header/Header';
 
 
 
 import * as PRICES from '../../../constants/price';
+import Footer from '../../Footer/Footer';
 
 class Flat extends Component {
   constructor(props) {
@@ -73,7 +72,7 @@ class Flat extends Component {
       + (this.state.roomCount-1)*PRICES.ROOM_PRICE
       + (this.state.bathroomCount-1)*PRICES.BATHROOM_PRICE;
     this.props.changeStartOptions({roomCount: this.state.roomCount,bathroomCount: this.state.bathroomCount});
-    return price;
+  return price;
   };
 
   render() {
@@ -95,7 +94,8 @@ class Flat extends Component {
   <CleanersSection/>
   <FAQSection/>
   <ProcessingSection/>
-  <BottomCalculator/>
+        <BottomCalculator price={price}/>
+        <Footer logo={logo}/>
       </div>
     );
   }

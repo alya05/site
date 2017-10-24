@@ -1,37 +1,19 @@
 import React, { Component } from 'react';
-import './Bottom-Calculator.less';
+import './Bottom-Calculator.css'
+import { NavLink } from 'react-router-dom'
 
-class CleanersSection extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cleaner1: false,
-      cleaner2: false,
-      cleaner3: false,
-    }
-  }
-
-  mouseOut = (prop) => {
-    this.setState({[prop]: false});
-  };
-
-  mouseOver = (prop) =>{
-    this.setState({[prop]: true});
-  };
-
+class BottomCalculator extends Component {
   render() {
     return (
-        <section class="bottom-calculator-section">
-          <div class="bottom-calculator-section__inner-container">
-            <div class="ncalculator">
-              <div class="calculator__button calculator__button_makeorder-style">
-                <div class="calculator__text calculator__text_makeorder-style">Уборка квартиры от 28 рублей</div>
-              </div>
-            </div>
+        <section className="bottom-calculator-section">
+          <div className="bottom-calculator-section__inner-container">
+             <div className="bottom-calculator-section__text">
+                 <NavLink to={'order'}>Уборка квартиры от {this.props.price} рублей</NavLink>
+             </div>
           </div>
         </section>
     );
   }
 }
 
-export default CleanersSection;
+export default BottomCalculator;
