@@ -6,6 +6,7 @@ import TrustSection from '../../Sections/TrustSection/TrustSection';
 import DescriptionSection from '../../Sections/DescriptionSection/DescriptionSection';
 import CleanersSection from '../../Sections/CleanersSection/CleanersSection';
 import FAQSection from '../../Sections/FAQSection/FAQSection';
+import BottomCalculator from '../../Sections/Bottom-Calculator/Bottom-Calculator';
 import ProcessingSection from '../../Sections/ProcessingSection/ProcessingSection';
 import Calculator from '../../Calculator/Calculator';
 import logo from '../../../images/main_logo_colorfull.png';
@@ -94,6 +95,7 @@ class Flat extends Component {
   <CleanersSection/>
   <FAQSection/>
   <ProcessingSection/>
+  <BottomCalculator/>
       </div>
     );
   }
