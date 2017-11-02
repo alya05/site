@@ -18,7 +18,7 @@
   .zvysh-description .zvysh-description__text_bottom {
     margin-left: 0.6rem; }
 
-@media screen and (max-device-width: 600px) {
+@media screen and (max-width: 600px) {
   .zvysh-description {
     height: max-content; }
     .zvysh-description .zvysh-description__inner-container {

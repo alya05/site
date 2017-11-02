@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './MainSection.css';
-import Header from '../../Header/Header';
-import Headlines from '../../Headlines/Headlines';
-import CalculatorMini from '../../CalculatorMini/CalculatorMini';
+import Header from '../../../Components/Header/Header';
+import Headlines from '../../../Components/Headlines/Headlines';
+import CalculatorMini from '../../../Components/CalculatorMini/CalculatorMini';
 
 
 class MainSection extends Component {

@@ -110,7 +110,7 @@ q0 253 -104.5 386.5t-299.5 133.5q-107 0 -194 -63t-135.5 -171.5t-48.5 -229.5q0 -1
 d="M120 49q0 23 16 39.5t39 16.5t39.5 -16.5t16.5 -39.5t-16.5 -39t-39.5 -16t-39 16t-16 39zM125 1011q0 23 16 39.5t39 16.5t39.5 -16.5t16.5 -39.5t-16.5 -39t-39.5 -16t-39 16t-16 39z" />
     <glyph glyph-name="semicolon" unicode=";" horiz-adv-x="364" 
 d="M126 1011q0 23 16 39.5t39 16.5t39.5 -16.5t16.5 -39.5t-16.5 -39t-39.5 -16t-39 16t-16 39zM118 -255l-37 32q81 104 88 215l1 167h54v-146q-4 -159 -106 -268z" />
-    <glyph glyph-name="less" unicode="&#x3c;" horiz-adv-x="1053" 
+    <glyph glyph-name="css" unicode="&#x3c;" horiz-adv-x="1053"
 d="M155 666l764 -345v-59l-837 379v50l837 378v-58z" />
     <glyph glyph-name="equal" unicode="=" horiz-adv-x="1142" 
 d="M981 843h-834v54h834v-54zM981 436h-834v54h834v-54z" />

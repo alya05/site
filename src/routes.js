@@ -20,6 +20,8 @@ class Routes extends Component {
     return (
       <Switch>
         <Route exact path='/' component={() =><Flat changeStartOptions={this.changeStartOptions}/>}/>
+        <Route path='/flat' component={() =><Flat changeStartOptions={this.changeStartOptions}/>}/>
+        <Route path='/cottage' component={() =><Flat changeStartOptions={this.changeStartOptions}/>}/>
         <Route path='/order' component={() => <Calculator defaultValues={defaultValues}/>}/>
       </Switch>
     )

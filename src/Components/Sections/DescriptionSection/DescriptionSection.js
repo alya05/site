@@ -19,7 +19,6 @@ class DescriptionSection extends Component {
             <TabPanel>
               <div className="description-section__option">
                 <div className="description-section__main-image">
-                  
                 </div>
                 <div className="description-section__item-container">
                   <div className="description-section__item">
@@ -50,7 +49,103 @@ class DescriptionSection extends Component {
               </div>
             </TabPanel>
             <TabPanel>
-              <h2>Any content 2</h2>
+              <div className="description-section__option">
+                <div className="description-section__main-image">
+
+                </div>
+                <div className="description-section__item-container">
+                  <div className="description-section__item">
+                    <div className="description-section__image"></div>
+                    <div className="description-section__text">Моем плиту и столешницу</div>
+                  </div>
+                  <div className="description-section__item">
+                    <div className="description-section__image"></div>
+                    <div className="description-section__text">Моем плиту и столешницу</div>
+                  </div>
+                  <div className="description-section__item">
+                    <div className="description-section__image"></div>
+                    <div className="description-section__text">Моем плиту и столешницу</div>
+                  </div>
+                  <div className="description-section__item">
+                    <div className="description-section__image"></div>
+                    <div className="description-section__text">Моем плиту и столешницу</div>
+                  </div>
+                  <div className="description-section__item">
+                    <div className="description-section__image"></div>
+                    <div className="description-section__text">Моем плиту и столешницу</div>
+                  </div>
+                  <div className="description-section__item">
+                    <div className="description-section__image"></div>
+                    <div className="description-section__text">Моем плиту и столешницу</div>
+                  </div>
+                </div>
+              </div>
+            </TabPanel>
+            <TabPanel>
+              <div className="description-section__option">
+                <div className="description-section__main-image">
+
+                </div>
+                <div className="description-section__item-container">
+                  <div className="description-section__item">
+                    <div className="description-section__image"></div>
+                    <div className="description-section__text">Моем плиту и столешницу</div>
+                  </div>
+                  <div className="description-section__item">
+                    <div className="description-section__image"></div>
+                    <div className="description-section__text">Моем плиту и столешницу</div>
+                  </div>
+                  <div className="description-section__item">
+                    <div className="description-section__image"></div>
+                    <div className="description-section__text">Моем плиту и столешницу</div>
+                  </div>
+                  <div className="description-section__item">
+                    <div className="description-section__image"></div>
+                    <div className="description-section__text">Моем плиту и столешницу</div>
+                  </div>
+                  <div className="description-section__item">
+                    <div className="description-section__image"></div>
+                    <div className="description-section__text">Моем плиту и столешницу</div>
+                  </div>
+                  <div className="description-section__item">
+                    <div className="description-section__image"></div>
+                    <div className="description-section__text">Моем плиту и столешницу</div>
+                  </div>
+                </div>
+              </div>
+            </TabPanel>
+            <TabPanel>
+              <div className="description-section__option">
+                <div className="description-section__main-image">
+
+                </div>
+                <div className="description-section__item-container">
+                  <div className="description-section__item">
+                    <div className="description-section__image"></div>
+                    <div className="description-section__text">Моем плиту и столешницу</div>
+                  </div>
+                  <div className="description-section__item">
+                    <div className="description-section__image"></div>
+                    <div className="description-section__text">Моем плиту и столешницу</div>
+                  </div>
+                  <div className="description-section__item">
+                    <div className="description-section__image"></div>
+                    <div className="description-section__text">Моем плиту и столешницу</div>
+                  </div>
+                  <div className="description-section__item">
+                    <div className="description-section__image"></div>
+                    <div className="description-section__text">Моем плиту и столешницу</div>
+                  </div>
+                  <div className="description-section__item">
+                    <div className="description-section__image"></div>
+                    <div className="description-section__text">Моем плиту и столешницу</div>
+                  </div>
+                  <div className="description-section__item">
+                    <div className="description-section__image"></div>
+                    <div className="description-section__text">Моем плиту и столешницу</div>
+                  </div>
+                </div>
+              </div>
             </TabPanel>
           </Tabs>
         </div>

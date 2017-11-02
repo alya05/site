@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import './Flat.css';
-import MainSection from '../../Sections/MainSection/MainSection';
-import RelaxSection from '../../Sections/RelaxSection/RelaxSection';
-import TrustSection from '../../Sections/TrustSection/TrustSection';
-import DescriptionSection from '../../Sections/DescriptionSection/DescriptionSection';
-import CleanersSection from '../../Sections/CleanersSection/CleanersSection';
-import FAQSection from '../../Sections/FAQSection/FAQSection';
-import ProcessingSection from '../../Sections/ProcessingSection/ProcessingSection';
-import BottomCalculator from '../../Sections/Bottom-Calculator/Bottom-Calculator';
+import MainSection from '../../../Components/Sections/MainSection/MainSection';
+import RelaxSection from '../../../Components/Sections/RelaxSection/RelaxSection';
+import TrustSection from '../../../Components/Sections/TrustSection/TrustSection';
+import DescriptionSection from '../../../Components/Sections/DescriptionSection/DescriptionSection';
+import CleanersSection from '../../../Components/Sections/CleanersSection/CleanersSection';
+import FAQSection from '../../../Components/Sections/FAQSection/FAQSection';
+import FeedbackSection from '../../../Components/Sections/FeedbackSection/FeedbackSection';
+import ProcessingSection from '../../../Components/Sections/ProcessingSection/ProcessingSection';
+import BottomCalculator from '../../../Components/Sections/Bottom-Calculator/Bottom-Calculator';
 import logo from '../../../images/main_logo_colorfull.png';
-
-
+import {CircleLoader} from 'react-spinners';
 
 import * as PRICES from '../../../constants/price';
-import Footer from '../../Footer/Footer';
+import Footer from '../../../Components/Footer/Footer';
 
 class Flat extends Component {
   constructor(props) {
@@ -21,9 +21,20 @@ class Flat extends Component {
     this.state = {
       bathroomCount: 1,
       roomCount: 1,
-      price: PRICES.BASE_PRICE
+      price: PRICES.BASE_PRICE,
+      visible: false
     }
   }
+
+  componentWillMount() {
+    this.setVisible();
+  }
+
+  setVisible = () => {
+    setTimeout(() => {
+      this.setState({visible: true});
+    }, 1000);
+  };
 
 
   addRoom = () => {
@@ -80,22 +91,28 @@ class Flat extends Component {
     const price = this.countPrice();
     return (
       <div className="flat">
-  <MainSection addRoom={this.addRoom}
-               addBathRoom={this.addBathRoom}
-               removeRoom={this.removeRoom}
-               logo={logo}
-               removeBathRoom={this.removeBathRoom}
-               roomCount={this.state.roomCount}
-               bathroomCount={this.state.bathroomCount}
-               price={price}/>
-       <RelaxSection/>
-  <TrustSection/>
-  <DescriptionSection/>
-  <CleanersSection/>
-  <FAQSection/>
-  <ProcessingSection/>
-        <BottomCalculator price={price}/>
-        <Footer logo={logo}/>
+        <div className={this.state.visible ? 'hide': 'spinner'}>
+          <CircleLoader loading={!this.state.visible} color={'#2ebaa7'}/>
+        </div>
+        <div className={this.state.visible ? 'container--visible': 'container'}>
+          <MainSection addRoom={this.addRoom}
+                       addBathRoom={this.addBathRoom}
+                       removeRoom={this.removeRoom}
+                       logo={logo}
+                       removeBathRoom={this.removeBathRoom}
+                       roomCount={this.state.roomCount}
+                       bathroomCount={this.state.bathroomCount}
+                       price={price}/>
+          <RelaxSection/>
+          <TrustSection/>
+          <DescriptionSection/>
+          <CleanersSection/>
+          <FAQSection/>
+          <ProcessingSection/>
+          <FeedbackSection/>
+          <BottomCalculator price={price}/>
+          <Footer logo={logo}/>
+          </div>
       </div>
     );
   }

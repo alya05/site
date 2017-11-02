@@ -24,7 +24,7 @@
 .header__calculator .phone-number__text, .header__calculator .phone-number__icon, .header__calculator .fa-phone {
   color: #164347; }
 
-@media screen and (max-device-width: 600px) {
+@media screen and (max-width: 600px) {
   .header {
     font-size: 17px;
     justify-content: inherit; }
@@ -87,7 +87,7 @@
         transform: rotate(-45deg);
         background: white; } }
 
-@media screen and (max-device-width: 500px) {
+@media screen and (max-width: 500px) {
   .header {
     height: auto; }
     .header .header__nav {

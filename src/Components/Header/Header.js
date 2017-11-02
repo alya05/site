@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './Header.css';
 import Logo from '../Logo/Logo';
-import ZvyshDescription from '../ZvyshDescription/ZvyshDescription';
-import Navigation from '../Navigation/Navigation';
-import PhoneNumber from '../PhoneNumber/PhoneNumber';
-import SignIn from '../SignIn/SignIn';
+import ZvyshDescription from '../../Components/ZvyshDescription/ZvyshDescription';
+import Navigation from '../../Components/Navigation/Navigation';
+import PhoneNumber from '../../Components/PhoneNumber/PhoneNumber';
+import SignIn from '../../Components/SignIn/SignIn';
 
 class Header extends Component {
 

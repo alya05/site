@@ -65,6 +65,60 @@ a {
   width: 1%;
 }
 
+.container {
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.container--visible {
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+  font-family: 'Roboto Thin';
+}
+
+.spinner {
+  display: flex;
+  width: 98vw;
+  height: 100vh;
+  align-items: center;
+  justify-content:center;
+}
+
+input:focus {
+  border-color: #2ebaa7;
+  box-shadow: 0 0 7px 0 #2ebaa7;
+}
+
+textarea:focus {
+  border-color: #2ebaa7;
+  box-shadow: 0 0 7px 0 #2ebaa7;
+}
+
+
+input {
+  border-style: solid;
+  border-width: 1px;
+}
+
+input, select, textarea {
+  font-family: "Roboto";
+  outline: none;
+}
+
+input:disabled {
+  background: white;
+}
+
+::-webkit-input-placeholder {
+  color: #aaa;;
+}
+:-moz-placeholder {
+  color: #aaa;;
+}
+::-moz-placeholder {
+  color: #aaa;;
+}
+
 body {
 }
 
