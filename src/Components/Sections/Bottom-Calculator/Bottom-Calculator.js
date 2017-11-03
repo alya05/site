@@ -7,9 +7,11 @@ class BottomCalculator extends Component {
     return (
         <section className="bottom-calculator-section">
           <div className="bottom-calculator-section__inner-container">
-             <div className="bottom-calculator-section__text">
-                 <NavLink to={'order'}>Уборка квартиры от {this.props.price} рублей</NavLink>
+              <NavLink to={'order'} className="bottom-calculator-section__text">
+              <div >
+                 Уборка квартиры от {this.props.price} рублей
              </div>
+              </NavLink>
           </div>
         </section>
     );

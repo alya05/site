@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom'
 import './Logo.css';
 
 class Logo extends Component {
@@ -6,7 +7,9 @@ class Logo extends Component {
     return (
       <div className="logo">
         <div className="logo__inner-container">
-          <img className="logo__image" src={this.props.logo} alt="Логотип сервиса Звыш"/>
+            <NavLink to={'flat'}>
+                <img className="logo__image" src={this.props.logo} alt="Логотип сервиса Звыш"/>
+            </NavLink>
         </div>
       </div>
     );

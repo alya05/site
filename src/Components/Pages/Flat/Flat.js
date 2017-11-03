@@ -26,6 +26,10 @@ class Flat extends Component {
     }
   }
 
+  componentDidMount() {
+    window.scrollTo(0,0);
+  }
+
   componentWillMount() {
     this.setVisible();
   }
@@ -59,7 +63,7 @@ class Flat extends Component {
   };
 
   addBathRoom = () => {
-    if (this.state.bathroomCount === 2) {
+    if (this.state.bathroomCount === 5) {
       return;
     }
     this.setState({

@@ -5,7 +5,6 @@ import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer'
-import logo from '../../images/main-logo-calculator.png';
 import {CircleLoader} from 'react-spinners';
 import './Calculator.css';
 import { Tabbordion, TabPanel, TabLabel, TabContent } from 'react-tabbordion'
@@ -15,6 +14,7 @@ import 'moment/locale/ru'
 import * as PRICES from '../../constants/price';
 import * as TIMES from '../../constants/time';
 
+import logo from '../../images/main-logo-calculator.png';
 
 import fridge from '../../images/fridge.png';
 import fridgeActive from '../../images/fridgeActive.png';
@@ -22,8 +22,8 @@ import fridgeActive from '../../images/fridgeActive.png';
 import oven from '../../images/oven.png';
 import ovenActive from '../../images/ovenActive.png';
 
-import window from '../../images/window.png';
-import windowActive from '../../images/windowActive.png';
+import windowImage from '../../images/window.png';
+import windowActiveImage from '../../images/windowActive.png';
 
 import balcony from '../../images/balcony.png';
 import balconyActive from '../../images/balconyActive.png';
@@ -59,7 +59,7 @@ const blockElements = {
   panel: "accordion-panel"
 };
 const bemModifiers = {
-  animated: "rttttttttttttttttttttttttttt",
+  animated: "animated",
   between: "between",
   checked: "checked",
   content: "content",
@@ -159,8 +159,6 @@ class Calculator extends Component {
     }
   }
 
-  componentDidMount() {
-  }
   componentWillMount() {
     this.setVisible();
   }
@@ -194,11 +192,15 @@ class Calculator extends Component {
   };
 
     renderBathroomCount =() => {
-      if (this.state.bathroomCount > 1) {
-        return this.state.bathroomCount + ' санузла'
-      } else {
-        return this.state.bathroomCount + ' санузел'
+      if (this.state.bathroomCount === 1) {
+        return this.state.bathroomCount + ' санузел';
+      } 
+      
+      if (this.state.bathroomCount === 5) {
+        return  this.state.bathroomCount + ' санузлов'
       }
+
+      return this.state.bathroomCount + ' санузла'
     };
 
     renderOrderHeader = () => {
@@ -250,7 +252,7 @@ class Calculator extends Component {
     };
 
   addBathRoom = () => {
-    if (this.state.bathroomCount === 2) {
+    if (this.state.bathroomCount === 5) {
       return;
     }
     this.setState({
@@ -599,6 +601,10 @@ class Calculator extends Component {
     }, 1000);
   };
 
+  componentDidMount() {
+    window.scrollTo(0,0);
+  }
+
   render() {
 
     var options = {
@@ -691,7 +697,7 @@ class Calculator extends Component {
                     <div onClick={this.addOption.bind(this, 'window')}
                          className={this.state.options.window.checked ? "calculator__option-body calculator__option-body--active" : "calculator__option-body"}>
                       <div className="calculator__image-container">
-                        <img src={this.state.options.window.checked ? '' : window} alt="Окна"/>
+                        <img src={this.state.options.window.checked ? windowActiveImage : windowImage} alt="Окна"/>
                       </div>
                       <span className={this.state.options.window.checked ? "calculator__label-text calculator__label-text--white" : "calculator__label-text"}>Окна</span>
                     </div>
@@ -919,7 +925,7 @@ class Calculator extends Component {
                             animateContent="height"
                             name="tabs"
                             bemModifiers={bemModifiers}
-                            mode="multiple"
+                            mode="toggle"
                             component="ul">
                   <TabPanel>
                     <TabLabel>Как изменить или отменить заказ?</TabLabel>

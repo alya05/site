@@ -60,7 +60,7 @@
   content: "\f107";
   font: normal normal normal 14px/1 FontAwesome;
   font-size: 1.5em;
-  color: #2a2a2a;
+  color: #2ebaa7;
   line-height: 1rem;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -72,9 +72,6 @@
   transform: rotate(0deg);
   -webkit-transition: -webkit-transform 375ms ease-in-out;
   transition: transform 375ms ease-in-out; }
-
-.accordion-title--checked {
-  color: #092327; }
 
 .accordion-title--checked:before {
   -webkit-transform: rotate(180deg);

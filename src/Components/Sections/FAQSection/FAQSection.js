@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './FAQSection.css';
-import { Tabbordion, TabPanel, TabLabel, TabContent } from 'react-tabbordion'
+import { Tabbordion , TabPanel, TabLabel, TabContent } from 'react-tabbordion'
 
 const blockElements = {
   animator: "accordion-animator",
@@ -10,7 +10,7 @@ const blockElements = {
 };
 
 const bemModifiers = {
-  animated: "rttttttttttttttttttttttttttt",
+  animated: "animated",
   between: "between",
   checked: "checked",
   content: "content",
@@ -30,12 +30,12 @@ class FAQSection extends Component {
       <section className="faq-section">
         <div className="faq-section__inner-container">
           <h3 className="faq-section__title">Вопросы и ответы</h3>
-          <Tabbordion blockElements={blockElements}
+          <Tabbordion  blockElements={blockElements}
                       className="accordion"
                       animateContent="height"
                       name="tabs"
+                      mode="toggle"
                       bemModifiers={bemModifiers}
-                      mode="multiple"
                       component="ul">
             <TabPanel>
               <TabLabel>Нужно ли быть дома во время уборки от Звыш?</TabLabel>

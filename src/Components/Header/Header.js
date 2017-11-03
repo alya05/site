@@ -4,7 +4,7 @@ import Logo from '../Logo/Logo';
 import ZvyshDescription from '../../Components/ZvyshDescription/ZvyshDescription';
 import Navigation from '../../Components/Navigation/Navigation';
 import PhoneNumber from '../../Components/PhoneNumber/PhoneNumber';
-import SignIn from '../../Components/SignIn/SignIn';
+
 
 class Header extends Component {
 

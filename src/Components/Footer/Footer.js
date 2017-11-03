@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './footer.css';
+import logo from '../../images/main-logo-calculator.png';
 
 class Footer extends Component {
 
@@ -23,7 +24,7 @@ class Footer extends Component {
         <div className="footer__inner-container">
           <div className="footer__copyright">
             <div className="footer__copyright-container">
-              <img className="logo__icon" src={this.props.logo} alt="Логотип сервиса Звыш" />
+              <img className="logo__icon" src={logo} alt="Логотип сервиса Звыш" />
               <p className="footer__copyright-text">© 2017</p>
             </div>
           </div>
