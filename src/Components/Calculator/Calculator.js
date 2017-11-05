@@ -158,6 +158,26 @@ class Calculator extends Component {
       }
     }
   }
+  
+   createOrder = () => {
+    const options = this.state.options.map(option => {
+      if (option.checked) {
+        return {description: option.description, count: option.count}
+      }
+    });
+
+    let order = {
+      roomCount: this.state.roomCount,
+      bathroomCount: this.state.bathroomCount,
+      address: this.state.address,
+      userInfo: this.state.userInfo,
+      options: options,
+      isHoover: this.state.isHoover,
+      date: this.state.date._d,
+      time: this.state.time,
+    };
+    console.log(order);
+  };
 
   componentWillMount() {
     this.setVisible();
